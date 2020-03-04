@@ -1,0 +1,1 @@
+After cloning the project... just run the App.py file in the MyApp directory/folder 
