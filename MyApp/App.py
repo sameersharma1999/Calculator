@@ -1,5 +1,5 @@
 from PyQt5 import QtWidgets
-from MyApp.Ui import Ui_MainWindow
+from Ui import Ui_MainWindow
 import math
 
 
