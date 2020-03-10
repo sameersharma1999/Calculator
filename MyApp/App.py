@@ -1,5 +1,5 @@
 from PyQt5 import QtWidgets
-from MyApp.Ui import Ui_MainWindow
+from Ui import Ui_MainWindow
 import math
 
 
@@ -40,7 +40,10 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         elif data in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
             if self.label_2.text() == 'Error':
                 self.label_2.clear()
-            self.label_2.setText(self.label_2.text() + data)
+            elif len(self.label_2.text()) == 12:
+                pass
+            else:        
+                self.label_2.setText(self.label_2.text() + data)
         elif data in ['+', '-', '*', '/']:
             if self.label_3.text() == '':
                 self.label_3.setText(self.label_2.text() + data)
@@ -59,8 +62,10 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     self.label_3.setText(self.label_3.text() + data + self.label_2.text())
             self.label_2.clear()
         elif data == '<':
+            if self.label_2.text() == 'E':
+                self.enable()
             if self.label_2.text() == '0':
-                pass
+                self.enable()
             elif self.label_2.text() in ['-0', '-1', '-2', '-3', '-4', '-5', '-6', '-7', '-8', '-9']:
                 self.label_2.setText('0')
             elif len(self.label_2.text()) == 1:

@@ -290,7 +290,7 @@ class Ui_MainWindow(object):
         self.per.setText(_translate("MainWindow", "%"))
         self.six.setText(_translate("MainWindow", "6"))
         self.four.setText(_translate("MainWindow", "4"))
-        self.plus.setToolTip(_translate("MainWindow", "Plus"))
+        self.plus.setToolTip(_translate("MainWindow", "Add"))
         self.plus.setText(_translate("MainWindow", "+"))
         self.equal.setText(_translate("MainWindow", "="))
         self.one_by_x.setToolTip(_translate("MainWindow", "one by x"))
