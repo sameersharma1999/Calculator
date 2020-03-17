@@ -34,6 +34,8 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.point.clicked.connect(lambda: self.get('.'))
 
     def get(self, data):
+        if self.label_2.text() != 'Error':
+            self.enable()
         if self.label_2.text() == '0' and data not in ['+', '-', '*', '/', '=', '<', '.', 'C', 'CE', '%', '1/x',
                                                        'SquareRoot', 'x_square', '+_-']:
             self.label_2.setText(data)
