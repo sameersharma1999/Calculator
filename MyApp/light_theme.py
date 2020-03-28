@@ -1,8 +1,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
+class Ui_MainWindow2(object):
+    def setupUi2(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(339, 565)
         MainWindow.setMinimumSize(QtCore.QSize(339, 565))
@@ -11,19 +11,19 @@ class Ui_MainWindow(object):
         MainWindow.setToolTipDuration(-1)
         MainWindow.setLayoutDirection(QtCore.Qt.LeftToRight)
         MainWindow.setAutoFillBackground(False)
-        MainWindow.setStyleSheet("background-color: rgb(0, 0, 0);\n"
-"color: rgb(255, 255, 255);")
+        MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(0, 0, 341, 531))
-        self.frame.setStyleSheet("background-color: rgb(0, 0, 0);")
+        self.frame.setStyleSheet("")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
         self.frame_buttons = QtWidgets.QFrame(self.frame)
         self.frame_buttons.setGeometry(QtCore.QRect(10, 120, 321, 421))
-        self.frame_buttons.setStyleSheet("background-color: rgb(0, 0, 0);")
+        self.frame_buttons.setStyleSheet("")
         self.frame_buttons.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_buttons.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_buttons.setObjectName("frame_buttons")
@@ -32,48 +32,48 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(16)
         self.point.setFont(font)
-        self.point.setStyleSheet("background-color: rgb(47, 47, 47);\n"
-"color: rgb(255, 255, 255);border-radius: 30px;")
+        self.point.setStyleSheet("color: rgb(120, 120, 120);\n"
+"background-color: rgb(193, 193, 193);border-radius: 30px;")
         self.point.setObjectName("point")
         self.three = QtWidgets.QPushButton(self.frame_buttons)
         self.three.setGeometry(QtCore.QRect(140, 280, 61, 61))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.three.setFont(font)
-        self.three.setStyleSheet("background-color: rgb(47, 47, 47);\n"
-"color: rgb(255, 255, 255);border-radius: 30px;")
+        self.three.setStyleSheet("color: rgb(120, 120, 120);\n"
+"background-color: rgb(193, 193, 193);border-radius: 30px;")
         self.three.setObjectName("three")
         self.zero = QtWidgets.QPushButton(self.frame_buttons)
         self.zero.setGeometry(QtCore.QRect(70, 350, 61, 61))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.zero.setFont(font)
-        self.zero.setStyleSheet("background-color: rgb(47, 47, 47);\n"
-"color: rgb(255, 255, 255);border-radius: 30px;")
+        self.zero.setStyleSheet("color: rgb(120, 120, 120);\n"
+"background-color: rgb(193, 193, 193);border-radius: 30px;")
         self.zero.setObjectName("zero")
         self.two = QtWidgets.QPushButton(self.frame_buttons)
         self.two.setGeometry(QtCore.QRect(70, 280, 61, 61))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.two.setFont(font)
-        self.two.setStyleSheet("background-color: rgb(47, 47, 47);\n"
-"color: rgb(255, 255, 255);border-radius: 30px;")
+        self.two.setStyleSheet("color: rgb(120, 120, 120);\n"
+"background-color: rgb(193, 193, 193);;border-radius: 30px;")
         self.two.setObjectName("two")
         self.eight = QtWidgets.QPushButton(self.frame_buttons)
         self.eight.setGeometry(QtCore.QRect(70, 140, 61, 61))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.eight.setFont(font)
-        self.eight.setStyleSheet("background-color: rgb(47, 47, 47);\n"
-"color: rgb(255, 255, 255);border-radius: 30px;")
+        self.eight.setStyleSheet("color: rgb(120, 120, 120);\n"
+"background-color: rgb(193, 193, 193);border-radius: 30px;")
         self.eight.setObjectName("eight")
         self.back = QtWidgets.QPushButton(self.frame_buttons)
         self.back.setGeometry(QtCore.QRect(210, 0, 111, 61))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.back.setFont(font)
-        self.back.setStyleSheet("background-color: rgb(227, 131, 13);\n"
-"color: rgb(255, 255, 255);\n"
+        self.back.setStyleSheet("background-color: rgb(255, 216, 97);\n"
+"color: rgb(120, 120, 120);\n"
 "border-radius: 30px;")
         self.back.setObjectName("back")
         self.five = QtWidgets.QPushButton(self.frame_buttons)
@@ -81,16 +81,16 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(16)
         self.five.setFont(font)
-        self.five.setStyleSheet("background-color: rgb(47, 47, 47);\n"
-"color: rgb(255, 255, 255);border-radius: 30px;")
+        self.five.setStyleSheet("color: rgb(120, 120, 120);\n"
+"background-color: rgb(193, 193, 193);border-radius: 30px;")
         self.five.setObjectName("five")
         self.seven = QtWidgets.QPushButton(self.frame_buttons)
         self.seven.setGeometry(QtCore.QRect(0, 140, 61, 61))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.seven.setFont(font)
-        self.seven.setStyleSheet("background-color: rgb(47, 47, 47);\n"
-"color: rgb(255, 255, 255);\n"
+        self.seven.setStyleSheet("color: rgb(120, 120, 120);\n"
+"background-color: rgb(193, 193, 193);\n"
 "border-radius: 30px;")
         self.seven.setObjectName("seven")
         self.plus_minus = QtWidgets.QPushButton(self.frame_buttons)
@@ -98,24 +98,24 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(16)
         self.plus_minus.setFont(font)
-        self.plus_minus.setStyleSheet("background-color: rgb(47, 47, 47);\n"
-"color: rgb(255, 255, 255);border-radius: 30px;")
+        self.plus_minus.setStyleSheet("border-radius: 30px;color: rgb(120, 120, 120);\n"
+"background-color: rgb(193, 193, 193);")
         self.plus_minus.setObjectName("plus_minus")
         self.multiply = QtWidgets.QPushButton(self.frame_buttons)
         self.multiply.setGeometry(QtCore.QRect(210, 140, 111, 61))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.multiply.setFont(font)
-        self.multiply.setStyleSheet("background-color: rgb(227, 131, 13);\n"
-"color: rgb(255, 255, 255);border-radius: 30px;")
+        self.multiply.setStyleSheet("background-color: rgb(255, 216, 97);\n"
+"color: rgb(120, 120, 120);border-radius: 30px;")
         self.multiply.setObjectName("multiply")
         self.x_square = QtWidgets.QPushButton(self.frame_buttons)
         self.x_square.setGeometry(QtCore.QRect(70, 70, 61, 61))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.x_square.setFont(font)
-        self.x_square.setStyleSheet("background-color: rgb(47, 47, 47);\n"
-"color: rgb(255, 255, 255);border-radius: 30px;")
+        self.x_square.setStyleSheet("color: rgb(120, 120, 120);\n"
+"background-color: rgb(193, 193, 193);border-radius: 30px;")
         self.x_square.setObjectName("x_square")
         self.divide = QtWidgets.QPushButton(self.frame_buttons)
         self.divide.setGeometry(QtCore.QRect(210, 70, 111, 61))
@@ -124,24 +124,25 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(16)
         self.divide.setFont(font)
-        self.divide.setStyleSheet("background-color: rgb(227, 131, 13);\n"
-"border-color: rgb(0, 0, 0);\n"
-"color: rgb(255, 255, 255);border-radius: 30px;")
+        self.divide.setStyleSheet("background-color: rgb(255, 216, 97);\n"
+"color: rgb(120, 120, 120);\n"
+"border-radius: 30px;")
         self.divide.setObjectName("divide")
         self.root = QtWidgets.QPushButton(self.frame_buttons)
         self.root.setGeometry(QtCore.QRect(140, 70, 61, 61))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.root.setFont(font)
-        self.root.setStyleSheet("background-color: rgb(47, 47, 47);\n"
-"color: rgb(255, 255, 255);border-radius: 30px;")
+        self.root.setStyleSheet("color: rgb(120, 120, 120);\n"
+"background-color: rgb(193, 193, 193);border-radius: 30px;")
         self.root.setObjectName("root")
         self.per = QtWidgets.QPushButton(self.frame_buttons)
         self.per.setGeometry(QtCore.QRect(0, 0, 61, 61))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.per.setFont(font)
-        self.per.setStyleSheet("background-color: rgb(130, 130, 130);\n"
+        self.per.setStyleSheet("color: rgb(120, 120, 120);\n"
+"background-color: rgb(232, 232, 232);\n"
 "border-radius: 30px;")
         self.per.setObjectName("per")
         self.six = QtWidgets.QPushButton(self.frame_buttons)
@@ -149,40 +150,40 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(16)
         self.six.setFont(font)
-        self.six.setStyleSheet("background-color: rgb(47, 47, 47);\n"
-"color: rgb(255, 255, 255);border-radius: 30px;")
+        self.six.setStyleSheet("color: rgb(120, 120, 120);\n"
+"background-color: rgb(193, 193, 193);border-radius: 30px;")
         self.six.setObjectName("six")
         self.four = QtWidgets.QPushButton(self.frame_buttons)
         self.four.setGeometry(QtCore.QRect(0, 210, 61, 61))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.four.setFont(font)
-        self.four.setStyleSheet("background-color: rgb(47, 47, 47);\n"
-"color: rgb(255, 255, 255);border-radius: 30px;")
+        self.four.setStyleSheet("color: rgb(120, 120, 120);\n"
+"background-color: rgb(193, 193, 193);border-radius: 30px;")
         self.four.setObjectName("four")
         self.plus = QtWidgets.QPushButton(self.frame_buttons)
         self.plus.setGeometry(QtCore.QRect(210, 280, 111, 61))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.plus.setFont(font)
-        self.plus.setStyleSheet("background-color: rgb(227, 131, 13);\n"
-"color: rgb(255, 255, 255);border-radius: 30px;")
+        self.plus.setStyleSheet("background-color: rgb(255, 216, 97);\n"
+"color: rgb(120, 120, 120);border-radius: 30px;")
         self.plus.setObjectName("plus")
         self.equal = QtWidgets.QPushButton(self.frame_buttons)
         self.equal.setGeometry(QtCore.QRect(210, 350, 111, 61))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.equal.setFont(font)
-        self.equal.setStyleSheet("background-color: rgb(227, 131, 13);\n"
-"color: rgb(255, 255, 255);border-radius: 30px;")
+        self.equal.setStyleSheet("background-color: rgb(255, 216, 97);\n"
+"color: rgb(120, 120, 120);border-radius: 30px;")
         self.equal.setObjectName("equal")
         self.one_by_x = QtWidgets.QPushButton(self.frame_buttons)
         self.one_by_x.setGeometry(QtCore.QRect(0, 70, 61, 61))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.one_by_x.setFont(font)
-        self.one_by_x.setStyleSheet("background-color: rgb(47, 47, 47);\n"
-"color: rgb(255, 255, 255);\n"
+        self.one_by_x.setStyleSheet("color: rgb(120, 120, 120);\n"
+"background-color: rgb(193, 193, 193);\n"
 "border-radius: 30px;")
         self.one_by_x.setObjectName("one_by_x")
         self.nine = QtWidgets.QPushButton(self.frame_buttons)
@@ -190,31 +191,32 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(16)
         self.nine.setFont(font)
-        self.nine.setStyleSheet("background-color: rgb(47, 47, 47);\n"
-"color: rgb(255, 255, 255);border-radius: 30px;")
+        self.nine.setStyleSheet("color: rgb(120, 120, 120);\n"
+"background-color: rgb(193, 193, 193);border-radius: 30px;")
         self.nine.setObjectName("nine")
         self.minus = QtWidgets.QPushButton(self.frame_buttons)
         self.minus.setGeometry(QtCore.QRect(210, 210, 111, 61))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.minus.setFont(font)
-        self.minus.setStyleSheet("background-color: rgb(227, 131, 13);\n"
-"color: rgb(255, 255, 255);border-radius: 30px;")
+        self.minus.setStyleSheet("background-color: rgb(255, 216, 97);\n"
+"color: rgb(120, 120, 120);border-radius: 30px;")
         self.minus.setObjectName("minus")
         self.one = QtWidgets.QPushButton(self.frame_buttons)
         self.one.setGeometry(QtCore.QRect(0, 280, 61, 61))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.one.setFont(font)
-        self.one.setStyleSheet("background-color: rgb(47, 47, 47);\n"
-"color: rgb(255, 255, 255);border-radius: 30px;")
+        self.one.setStyleSheet("color: rgb(120, 120, 120);\n"
+"background-color: rgb(193, 193, 193);border-radius: 30px;")
         self.one.setObjectName("one")
         self.clear = QtWidgets.QPushButton(self.frame_buttons)
         self.clear.setGeometry(QtCore.QRect(140, 0, 61, 61))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.clear.setFont(font)
-        self.clear.setStyleSheet("background-color: rgb(130, 130, 130);\n"
+        self.clear.setStyleSheet("color: rgb(120, 120, 120);\n"
+"background-color: rgb(232, 232, 232);\n"
 "border-radius: 30px;")
         self.clear.setObjectName("clear")
         self.ce = QtWidgets.QPushButton(self.frame_buttons)
@@ -222,12 +224,13 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(16)
         self.ce.setFont(font)
-        self.ce.setStyleSheet("background-color: rgb(130, 130, 130);\n"
+        self.ce.setStyleSheet("color: rgb(120, 120, 120);\n"
+"background-color: rgb(232, 232, 232);\n"
 "border-radius: 30px;")
         self.ce.setObjectName("ce")
         self.frame_calculations_display = QtWidgets.QFrame(self.frame)
         self.frame_calculations_display.setGeometry(QtCore.QRect(10, 40, 321, 71))
-        self.frame_calculations_display.setStyleSheet("background-color: rgb(0, 0, 0);")
+        self.frame_calculations_display.setStyleSheet("")
         self.frame_calculations_display.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_calculations_display.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_calculations_display.setObjectName("frame_calculations_display")
@@ -236,8 +239,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(28)
         self.label_2.setFont(font)
-        self.label_2.setStyleSheet("background-color: rgb(0, 0, 0);\n"
-"color: rgb(255, 255, 255);")
+        self.label_2.setStyleSheet("color: rgb(0, 0, 0);")
         self.label_2.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(self.frame_calculations_display)
@@ -246,8 +248,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.label_3.setFont(font)
-        self.label_3.setStyleSheet("background-color: rgb(0, 0, 0);\n"
-"color: rgb(255, 255, 255);")
+        self.label_3.setStyleSheet("color: rgb(0, 0, 0);")
         self.label_3.setText("")
         self.label_3.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_3.setObjectName("label_3")
@@ -256,7 +257,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(16)
         self.label.setFont(font)
-        self.label.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label.setStyleSheet("color: rgb(117, 117, 117);")
         self.label.setObjectName("label")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menuBar = QtWidgets.QMenuBar(MainWindow)
@@ -265,8 +266,6 @@ class Ui_MainWindow(object):
         self.menuSettings = QtWidgets.QMenu(self.menuBar)
         self.menuSettings.setObjectName("menuSettings")
         self.menuThemes = QtWidgets.QMenu(self.menuSettings)
-        self.menuThemes.setStyleSheet("background-color: transparent;\n"
-"color: rgb(255, 255, 255);")
         self.menuThemes.setObjectName("menuThemes")
         MainWindow.setMenuBar(self.menuBar)
         self.actionDark = QtWidgets.QAction(MainWindow)
@@ -330,7 +329,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
+    ui = Ui_MainWindow2()
+    ui.setupUi2(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
