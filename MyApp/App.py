@@ -7,8 +7,7 @@ import math
 class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow, Ui_MainWindow2):
     def __init__(self, parent=None):
         super(MyMainWindow, self).__init__(parent)
-        # super(MyMainWindow, self).__init__(parent)
-        self.setupUi2(self)  # here we setup ui file
+        self.setupUi2(self)  # here we setup ui file of light mode (Initially)
 
         self.actionDark.triggered.connect(self.change_theme_to_dark)
         self.actionLight.triggered.connect(self.change_theme_to_light)
@@ -39,7 +38,7 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow, Ui_MainWindow2):
         self.point.clicked.connect(lambda: self.get('.'))
 
     def change_theme_to_light(self):
-        self.setupUi2(self)
+        self.setupUi2(self)  # here we setup ui file of light mode
 
         self.actionDark.triggered.connect(self.change_theme_to_dark)
         self.actionLight.triggered.connect(self.change_theme_to_light)
@@ -70,7 +69,7 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow, Ui_MainWindow2):
         self.point.clicked.connect(lambda: self.get('.'))
 
     def change_theme_to_dark(self):
-        self.setupUi(self)  # here we setup ui file
+        self.setupUi(self)  # here we setup ui file of dark mode
 
         self.actionDark.triggered.connect(self.change_theme_to_dark)
         self.actionLight.triggered.connect(self.change_theme_to_light)
