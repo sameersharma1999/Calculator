@@ -1,5 +1,5 @@
 from PyQt5 import QtWidgets
-from MyApp.Ui import Ui_MainWindow
+from MyApp.dark_theme import Ui_MainWindow
 from MyApp.light_theme import Ui_MainWindow2
 import math
 
@@ -100,127 +100,127 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow, Ui_MainWindow2):
         self.point.clicked.connect(lambda: self.get('.'))
 
     def get(self, data):
-            if self.label_2.text() != 'Error':
+        if self.label_2.text() != 'Error':
+            self.enable()
+        if self.label_2.text() == '0' and data not in ['+', '-', '*', '/', '=', '<', '.', 'C', 'CE', '%', '1/x',
+                                                       'SquareRoot', 'x_square', '+_-']:
+            self.label_2.setText(data)
+        elif data in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
+            if self.label_2.text() == 'Error':
+                self.label_2.clear()
+            elif len(self.label_2.text()) == 12:
+                pass
+            else:
+                self.label_2.setText(self.label_2.text() + data)
+        elif data in ['+', '-', '*', '/']:
+            if self.label_3.text() == '':
+                self.label_3.setText(self.label_2.text() + data)
+                self.label_2.clear()
+            elif self.label_2.text() != '' and list(self.label_3.text()).pop() not in ['+', '-', '*', '/']:
+                self.label_3.setText(self.label_2.text() + data)
+            else:
+                check_operator2 = list(self.label_3.text()).pop()
+                if self.label_2.text() != '' and check_operator2 not in ['0', '1', '2', '3', '4', '5', '6', '7', '8',
+                                                                         '9']:
+                    self.label_3.setText(self.label_3.text() + self.label_2.text() + data)
+                elif check_operator2 != data and check_operator2 not in ['0', '1', '2', '3', '4', '5', '6', '7', '8',
+                                                                         '9']:
+                    self.label_3.setText(self.label_3.text()[:-1] + data)  # change operator
+                elif check_operator2 in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
+                    self.label_3.setText(self.label_3.text() + data + self.label_2.text())
+            self.label_2.clear()
+        elif data == '<':
+            if self.label_2.text() == 'E':
                 self.enable()
-            if self.label_2.text() == '0' and data not in ['+', '-', '*', '/', '=', '<', '.', 'C', 'CE', '%', '1/x',
-                                                           'SquareRoot', 'x_square', '+_-']:
-                self.label_2.setText(data)
-            elif data in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
-                if self.label_2.text() == 'Error':
-                    self.label_2.clear()
-                elif len(self.label_2.text()) == 12:
-                    pass
-                else:
-                    self.label_2.setText(self.label_2.text() + data)
-            elif data in ['+', '-', '*', '/']:
-                if self.label_3.text() == '':
-                    self.label_3.setText(self.label_2.text() + data)
-                    self.label_2.clear()
-                elif self.label_2.text() != '' and list(self.label_3.text()).pop() not in ['+', '-', '*', '/']:
-                    self.label_3.setText(self.label_2.text() + data)
-                else:
-                    check_operator2 = list(self.label_3.text()).pop()
-                    if self.label_2.text() != '' and check_operator2 not in ['0', '1', '2', '3', '4', '5', '6', '7', '8',
-                                                                             '9']:
-                        self.label_3.setText(self.label_3.text() + self.label_2.text() + data)
-                    elif check_operator2 != data and check_operator2 not in ['0', '1', '2', '3', '4', '5', '6', '7', '8',
-                                                                             '9']:
-                        self.label_3.setText(self.label_3.text()[:-1] + data)  # change operator
-                    elif check_operator2 in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
-                        self.label_3.setText(self.label_3.text() + data + self.label_2.text())
-                self.label_2.clear()
-            elif data == '<':
-                if self.label_2.text() == 'E':
-                    self.enable()
-                if self.label_2.text() == '0':
-                    self.enable()
-                elif self.label_2.text() in ['-0', '-1', '-2', '-3', '-4', '-5', '-6', '-7', '-8', '-9']:
-                    self.label_2.setText('0')
-                elif len(self.label_2.text()) == 1:
-                    self.label_2.setText('0')
-                elif len(self.label_2.text()) > 0:
-                    changed_data = list(self.label_2.text())
-                    changed_data.pop()
-                    sums = ''
-                    for i in changed_data:
-                        sums += i
-                    self.label_2.setText(sums)
-                else:
-                    pass
-            elif data == '=':
-                if self.label_3.text() == '':
-                    self.label_2.setText(self.label_2.text())
-                elif self.label_3.text() != '':
-                    if list(self.label_3.text()).pop() in ['+', '-', '*', '/'] and self.label_2.text() == '':
-                        string_without_sign = list(self.label_3.text())
-                        string_without_sign.pop()
-                        string_sum = ''
-                        for i in string_without_sign:
-                            string_sum += i
-                        result = self.calculations(string_sum)
-                        self.label_2.setText(str(result))
-                    elif list(self.label_3.text()).pop() in ['+', '-', '*', '/']:
-                        new_str = self.label_3.text() + self.label_2.text()
-                        self.label_3.setText(new_str)
-                        result = self.calculations(new_str)
-                        self.label_2.setText(str(result))
-                    elif self.label_3.text() != '' and self.label_2.text() == '':
-                        result = self.calculations(self.label_3.text())
-                        self.label_2.setText(str(result))
-                self.label_3.clear()
-            elif data == '.':
-                if '.' in self.label_2.text():
-                    pass
-                elif self.label_2.text() == '0' or self.label_2.text() == '':
-                    self.label_2.setText('0' + data)
-                else:
-                    self.label_2.setText(self.label_2.text() + data)
-            elif data == '%':
-                if self.label_2.text() != '':
-                    new_str = self.label_2.text() + '/' + '100'
-                    result = self.calculations(new_str)
-                    self.label_2.setText(str(result))
-            elif data == '1/x':
-                if self.label_2.text() != '':
-                    new_str = '1' + '/' + self.label_2.text()
-                    result = self.calculations(new_str)
-                    self.label_2.setText(str(result))
-            elif data == 'x_square':
-                if self.label_2.text() != '':
-                    new_str = self.label_2.text() + '**' + '2'
-                    result = self.calculations(new_str)
-                    self.label_2.setText(str(result))
-            elif data == 'SquareRoot':
-                if self.label_2.text() == '':
-                    pass
-                else:
-                    try:
-                        self.label_2.setText(str(round(math.sqrt(eval(self.label_2.text())), 4)))
-                    except ValueError as e:
-                        self.label_3.clear()
-                        self.disable()
-                        self.label_2.setText('Error')
-            elif data == '+_-':
-                if self.label_2.text() != '':
-                    if self.label_2.text() not in ['0', '0.0']:
-                        first_letter = list(self.label_2.text())[0]
-                        minus = '-'
-                        if first_letter != minus:
-                            self.label_2.setText(minus + self.label_2.text())
-                        elif first_letter == minus:
-                            self.label_2.setText(self.label_2.text()[1:])
-                    else:
-                        pass
-            elif data == 'C':
-                self.label_2.clear()
-                self.label_3.clear()
+            if self.label_2.text() == '0':
+                self.enable()
+            elif self.label_2.text() in ['-0', '-1', '-2', '-3', '-4', '-5', '-6', '-7', '-8', '-9']:
                 self.label_2.setText('0')
-                self.enable()
-            elif data == 'CE':
-                self.label_3.clear()
-                self.label_2.clear()
+            elif len(self.label_2.text()) == 1:
                 self.label_2.setText('0')
-                self.enable()
+            elif len(self.label_2.text()) > 0:
+                changed_data = list(self.label_2.text())
+                changed_data.pop()
+                sums = ''
+                for i in changed_data:
+                    sums += i
+                self.label_2.setText(sums)
+            else:
+                pass
+        elif data == '=':
+            if self.label_3.text() == '':
+                self.label_2.setText(self.label_2.text())
+            elif self.label_3.text() != '':
+                if list(self.label_3.text()).pop() in ['+', '-', '*', '/'] and self.label_2.text() == '':
+                    string_without_sign = list(self.label_3.text())
+                    string_without_sign.pop()
+                    string_sum = ''
+                    for i in string_without_sign:
+                        string_sum += i
+                    result = self.calculations(string_sum)
+                    self.label_2.setText(str(result))
+                elif list(self.label_3.text()).pop() in ['+', '-', '*', '/']:
+                    new_str = self.label_3.text() + self.label_2.text()
+                    self.label_3.setText(new_str)
+                    result = self.calculations(new_str)
+                    self.label_2.setText(str(result))
+                elif self.label_3.text() != '' and self.label_2.text() == '':
+                    result = self.calculations(self.label_3.text())
+                    self.label_2.setText(str(result))
+            self.label_3.clear()
+        elif data == '.':
+            if '.' in self.label_2.text():
+                pass
+            elif self.label_2.text() == '0' or self.label_2.text() == '':
+                self.label_2.setText('0' + data)
+            else:
+                self.label_2.setText(self.label_2.text() + data)
+        elif data == '%':
+            if self.label_2.text() != '':
+                new_str = self.label_2.text() + '/' + '100'
+                result = self.calculations(new_str)
+                self.label_2.setText(str(result))
+        elif data == '1/x':
+            if self.label_2.text() != '':
+                new_str = '1' + '/' + self.label_2.text()
+                result = self.calculations(new_str)
+                self.label_2.setText(str(result))
+        elif data == 'x_square':
+            if self.label_2.text() != '':
+                new_str = self.label_2.text() + '**' + '2'
+                result = self.calculations(new_str)
+                self.label_2.setText(str(result))
+        elif data == 'SquareRoot':
+            if self.label_2.text() == '':
+                pass
+            else:
+                try:
+                    self.label_2.setText(str(round(math.sqrt(eval(self.label_2.text())), 4)))
+                except ValueError as e:
+                    self.label_3.clear()
+                    self.disable()
+                    self.label_2.setText('Error')
+        elif data == '+_-':
+            if self.label_2.text() != '':
+                if self.label_2.text() not in ['0', '0.0']:
+                    first_letter = list(self.label_2.text())[0]
+                    minus = '-'
+                    if first_letter != minus:
+                        self.label_2.setText(minus + self.label_2.text())
+                    elif first_letter == minus:
+                        self.label_2.setText(self.label_2.text()[1:])
+                else:
+                    pass
+        elif data == 'C':
+            self.label_2.clear()
+            self.label_3.clear()
+            self.label_2.setText('0')
+            self.enable()
+        elif data == 'CE':
+            self.label_3.clear()
+            self.label_2.clear()
+            self.label_2.setText('0')
+            self.enable()
 
     def enable(self):
         self.plus.setEnabled(True)
